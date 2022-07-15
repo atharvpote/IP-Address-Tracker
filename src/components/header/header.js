@@ -27,11 +27,11 @@ export function Header() {
           dispatch({ type: "IP_UPDATE" });
         }}
       >
-        <Label htmlFor="ip" aria-label="Enter IP Address" />
+        <Label htmlFor="input" aria-label="Enter IP Address" />
         <InputContainer>
           <TextInput
             type="text"
-            htmlFor="ip"
+            id="input"
             value={state.input}
             onChange={(e) =>
               dispatch({
