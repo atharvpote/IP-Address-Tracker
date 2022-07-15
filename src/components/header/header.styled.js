@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { hideVisually } from "polished";
+import { fluidRange, hideVisually, rem } from "polished";
 import { backgrounds } from "../../assets";
 import { colors, fontFamily, typeScale, weightScale } from "../../utils";
 
@@ -10,7 +10,11 @@ export const StyledHeader = styled.header`
   background-repeat: no-repeat;
   padding-inline: 1.5rem;
   position: relative;
-  padding-bottom: 10.5rem;
+  min-height: 19.5rem;
+
+  @media (min-width: 630px) {
+    min-height: 14rem;
+  }
 `;
 
 export const Title = styled.h1`
@@ -44,6 +48,17 @@ export const TextInput = styled.input.attrs({ type: "text" })`
   font-size: ${typeScale.paragraph};
   font-family: ${fontFamily};
   flex-basis: 100%;
+  max-width: ${rem(524)};
+
+  &::placeholder {
+    visibility: hidden;
+  }
+
+  @media (min-width: 400px) {
+    &::placeholder {
+      visibility: visible;
+    }
+  }
 `;
 
 export const Button = styled.button`
@@ -65,7 +80,50 @@ export const DescriptionList = styled.dl`
   right: 1.5rem;
   transform: translateY(-50%);
   border-radius: 15px;
-  box-shadow: 0 0 3px 0 ${colors.darkGray};
+  box-shadow: 0 1px 1px 0 ${colors.darkGray};
+  z-index: 500;
+  padding: 1.5rem;
+
+  div {
+    margin-bottom: 1.5rem;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: 630px) {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+
+    div {
+      margin: 0;
+      flex-basis: 25%;
+      border-right: 1px solid ${colors.darkGray};
+      padding-left: 1rem;
+
+      &:first-of-type {
+        padding: 0;
+      }
+
+      &:last-of-type {
+        border: none;
+      }
+    }
+
+    ${fluidRange(
+      {
+        prop: "width",
+        fromSize: "600px",
+        toSize: "900px",
+      },
+      "630px",
+      "1000px"
+    )}
+  }
 `;
 
 export const DescriptionTitle = styled.dt`
@@ -78,12 +136,7 @@ export const DescriptionTitle = styled.dt`
 
 export const DescriptionDef = styled.dd`
   margin-left: 0;
-  margin-bottom: 1.5rem;
   font-size: ${typeScale.heading5};
   font-weight: ${weightScale.bold};
   color: ${colors.varyDarkGray};
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
 `;
