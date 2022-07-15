@@ -22,7 +22,6 @@ export function Header() {
     <StyledHeader>
       <Title>IP Address Tracker</Title>
       <Form
-        action=""
         onSubmit={(e) => {
           e.preventDefault();
           dispatch({ type: "IP_UPDATE" });
@@ -42,7 +41,7 @@ export function Header() {
             }
             placeholder={"Search for any IP address or domain"}
           />
-          <Button>
+          <Button aria-label="submit">
             <img src={icons.arrowIcon} alt="" />
           </Button>
         </InputContainer>
