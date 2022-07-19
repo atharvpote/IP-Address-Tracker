@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/atharvpote/IP-Address-Tracker)
-- Live Site URL: [Ip Address Tracker](https://fm-ip-tracker.netlify.app/)
+- Live Site URL: [IP Address Tracker](https://fm-ip-tracker.netlify.app/)
 
 ## My process
 
