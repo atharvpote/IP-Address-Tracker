@@ -18,5 +18,5 @@ root.render(
         </main>
       </StateContextProvider>
     </div>
-  </StrictMode>
+  </StrictMode>,
 );

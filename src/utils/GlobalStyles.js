@@ -21,7 +21,7 @@ body{
     height: calc(100vh - 19rem);
     min-height: 27rem;
     
-    @media (min-width: 600px) {
+    @media (width >= 600px) {
         height: calc(100vh - 14rem);
   }
 }

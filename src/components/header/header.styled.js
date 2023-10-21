@@ -12,7 +12,7 @@ export const StyledHeader = styled.header`
   position: relative;
   min-height: 19.5rem;
 
-  @media (min-width: 630px) {
+  @media (width >= 630px) {
     min-height: 14rem;
   }
 `;
@@ -54,7 +54,7 @@ export const TextInput = styled.input.attrs({ type: "text" })`
     visibility: hidden;
   }
 
-  @media (min-width: 400px) {
+  @media (width >= 400px) {
     &::placeholder {
       visibility: visible;
     }
@@ -92,7 +92,7 @@ export const DescriptionList = styled.dl`
     }
   }
 
-  @media (min-width: 630px) {
+  @media (width >= 630px) {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: left;
@@ -121,7 +121,7 @@ export const DescriptionList = styled.dl`
         toSize: "900px",
       },
       "630px",
-      "1000px"
+      "1000px",
     )}
   }
 `;
